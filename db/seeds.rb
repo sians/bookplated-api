@@ -7,3 +7,28 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 sian = User.create(email: 'sian.m.stone@gmail.com', password: 'foobar', username: 'siansian')
+
+
+jest = Book.create(
+  title: "Infinite Jest",
+  first_published: 1996,
+  isbn: "9-780349121086",
+  pages: 1080
+  )
+
+dfw = Author.create(
+  first_name: "David",
+  last_name: "Foster Wallace",
+  birth_year: 1962,
+  nationality: "American",
+  born: "California, USA",
+  death_year: 2008,
+  gender: 0
+  )
+
+ub = UsersBook.create(user: sian, book: jest)
+ab = AuthorsBook.create(author: dfw, book: jest)
+ua = UsersAuthor.create(user: sian, author: dfw)
+
+Quote.create(user: sian, quotable: ub, quote_text: "some text")
+Quote.create(user: sian, quotable: ua, quote_text: "second quote text")

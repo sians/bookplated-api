@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
-  include pundit
+  # include pundit
 
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def json_response(data, include_data: [], meta: {}, params: {}, status: :ok)
     options = {

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  book: one
+  date_read: 2020-04-14 13:39:11
+  reading_status: 1
+
+two:
+  user: two
+  book: two
+  date_read: 2020-04-14 13:39:11
+  reading_status: 1
