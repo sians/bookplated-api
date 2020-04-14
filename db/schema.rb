@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_125106) do
+ActiveRecord::Schema.define(version: 2020_04_14_131153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,18 @@ ActiveRecord::Schema.define(version: 2020_04_14_125106) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["jti"], name: "index_jwt_blacklists_on_jti"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.text "note_text"
+    t.string "type"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "notable_type", null: false
+    t.bigint "notable_id", null: false
+    t.index ["notable_type", "notable_id"], name: "index_notes_on_notable_type_and_notable_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "quotes", force: :cascade do |t|
@@ -105,6 +117,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_125106) do
 
   add_foreign_key "authors_books", "authors"
   add_foreign_key "authors_books", "books"
+  add_foreign_key "notes", "users"
   add_foreign_key "quotes", "authors"
   add_foreign_key "quotes", "users"
   add_foreign_key "users_authors", "authors"

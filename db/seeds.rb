@@ -32,3 +32,6 @@ ua = UsersAuthor.create(user: sian, author: dfw)
 
 Quote.create(user: sian, quotable: ub, quote_text: "some text")
 Quote.create(user: sian, quotable: ua, quote_text: "second quote text")
+
+Note.create(user: sian, notable: ub, note_text: "This a note on Infinite Jest")
+Note.create(user: sian, notable: ua, note_text: "This a note about David Foster Wallace")
