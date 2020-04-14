@@ -35,3 +35,22 @@ Quote.create(user: sian, quotable: ua, quote_text: "second quote text")
 
 Note.create(user: sian, notable: ub, note_text: "This a note on Infinite Jest")
 Note.create(user: sian, notable: ua, note_text: "This a note about David Foster Wallace")
+
+
+reality = Book.create(
+  title: "Reality Is Not What It Seems",
+  first_published: 2016,
+  isbn: "9-780735213920",
+  pages: 234
+  )
+
+rovelli = Author.create(
+  first_name: "Carlo",
+  last_name: "Rovelli",
+  birth_year: 1958,
+  nationality: "Italian",
+  born: "Verona, Italy",
+  gender: 0
+  )
+
+ab2 = AuthorsBook.create(author: rovelli, book: reality)

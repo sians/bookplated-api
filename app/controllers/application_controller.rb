@@ -13,6 +13,14 @@ class ApplicationController < ActionController::API
     render(json: json_serializer(data).new(data, options), status: status)
   end
 
+  def render_unprocessable_entity!(errors)
+    json_response(
+      nil,
+      meta: { status: :unprocessable_entity, message: serialize_errors(errors) },
+      status: :unprocessable_entity,
+    )
+  end
+
   def user_not_authorized(exception)
     json_response(
       nil,
@@ -32,5 +40,9 @@ class ApplicationController < ActionController::API
     data_class_name = data.is_a?(Enumerable) ? data.klass.name : data.class.name
 
     "#{data_class_name}Serializer".constantize
+  end
+
+  def serialize_errors(errors)
+    errors.messages
   end
 end

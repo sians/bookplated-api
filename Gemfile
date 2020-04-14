@@ -15,6 +15,8 @@ gem 'pundit'
 # pinned to prevent breaking changes
 gem 'dry-configurable', '0.9.0'
 
+# Use FastJSONApi for JSON serialization
+gem 'fast_jsonapi'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'

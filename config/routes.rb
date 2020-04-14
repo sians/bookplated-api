@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       post 'reset_password', to: 'passwords#reset'
       patch 'password', to: 'passwords#update'
     end
+
+    resources :users_books, only: [:index, :show, :create, :update]
   end
 
 end
