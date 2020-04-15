@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
 
     resources :users_books, only: [:index, :show, :create, :update]
-    resources :users_authors, onlu: [:index, :show, :create, :update]
+    resources :users_authors, only: [:index, :show, :create, :update]
+    resources :books, only: [:index, :create, :update]
   end
-
 end

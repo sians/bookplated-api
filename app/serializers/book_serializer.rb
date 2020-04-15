@@ -5,5 +5,5 @@ class BookSerializer < BaseSerializer
   attribute :isbn
   attribute :pages
 
-  has_many :authors_books
+  has_many :authors, through: :authors_books
 end
